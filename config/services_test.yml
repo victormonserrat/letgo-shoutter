@@ -1,0 +1,18 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    Shoutter\Tests\:
+        resource: '../tests/*'
+
+    Shoutter\Tests\Services\HttpClientInterface:
+        alias: Shoutter\Tests\Services\HttpClient
+
+    Shoutter\Tweets\Application\Models\TweetView:
+        alias: Shoutter\Tweets\Infrastructure\Models\ApiTweetView
+
+    Shoutter\Tweets\Application\Repositories\TweetViews:
+        alias: Shoutter\Tweets\Infrastructure\Repositories\InMemoryTweetViews
+
+    Symfony\Bundle\FrameworkBundle\KernelBrowser: ~

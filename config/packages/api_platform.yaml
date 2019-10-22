@@ -1,0 +1,18 @@
+api_platform:
+    doctrine:
+        enabled: false
+    mapping:
+        paths: ['%kernel.project_dir%/src/Tweets/Infrastructure/Models']
+    exception_to_status:
+        ApiPlatform\Core\Exception\FilterValidationException: 400
+        ApiPlatform\Core\Exception\InvalidArgumentException: 400
+        Symfony\Component\Serializer\Exception\ExceptionInterface: 400
+        Shoutter\Common\Domain\Exceptions\InvalidId: 404
+        Shoutter\Tweets\Application\Exceptions\InvalidQueryLimit: 400
+        Shoutter\Tweets\Domain\Exceptions\InvalidTweetContent: 400
+        Shoutter\Users\Domain\Exceptions\InvalidUserName: 400
+        Shoutter\Users\Domain\Exceptions\NotFoundUser: 404
+    patch_formats:
+        json: ['application/merge-patch+json']
+    swagger:
+        versions: [3]

@@ -1,0 +1,6 @@
+formatter.name: pretty
+
+suites:
+    default:
+        namespace: Shoutter
+        psr4_prefix: Shoutter
